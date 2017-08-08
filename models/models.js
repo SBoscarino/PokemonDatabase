@@ -6,17 +6,13 @@ let pokemonGoSchema = new Schema({
     type : String,
     required : true
   },
-  isItCaught : {
-    type: Boolean,
-    default : false
+  nickName : {
+    type : String,
+    required: false
   },
-  typeOne : {
+  type : {
     type : [String],
     required : true
-  },
-  typeTwo : {
-    type : [String],
-    required : false
   },
   isAWonder : {
     type : Boolean,
