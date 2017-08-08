@@ -28,4 +28,7 @@ let pokemonGoSchema = new Schema({
     default : Date.now
   }
 });
+
+//this creates the collection within the database called "pokemons";
+//mongo creates the collection.
 module.exports = mongoose.model('Pokemon', pokemonGoSchema);

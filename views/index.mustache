@@ -4,50 +4,57 @@
     <meta charset="utf-8">
     <title>Pokemon Go Collection</title>
     <link rel="stylesheet" href="index.css">
+    <link href="https://fonts.googleapis.com/css?family=Patrick+Hand+SC" rel="stylesheet">
   </head>
   <body>
-    <h1>Gotta Catch 'em All!</h1>
-    <h3>Show off your Pokemon catching skills by listing them here and sharing with your friends...and enemies!!</h3>
-    <hr>
+    <div class="header" id="topmost">
+    <h1 id="title">Gotta Catch 'em All!</h1>
+    <h2 id="titletext">Show off your Pokemon catching skills by listing them here and sharing with your friends...and enemies!!</h2>
+  </div>
 
-    <h3>My Collection:</h3>
+    <h1 class="header">My Collection</h1>
     {{#pokemons}}
-    <ul>
-      <li>Name:{{name}}</li>
-      <li>Nickname:{{#nickName}}{{/nickName}}</li>
-      <li>Type(s):{{#type}}{{.}}{{/type}}</li>
-      <li>Is it a Wonder?{{isAWonder}}</li>
-      <li>combatPoints:{{combatPoints}}</li>
-      <li>dateCaught{{dateCaught}}</li>
+    <ul class="eachPokemon">
+      <li id="name"><strong>{{name}}</strong></li>
+      {{#nickName}}<li><b>Nickname: </b>{{.}}</li>{{/nickName}}
+      <li><b>Type(s): </b>{{#type}} {{.}} {{/type}}</li>
+      <li><b>Is it a Wonder? </b>{{isAWonder}}</li>
+      <li><b>Combat Points: </b>{{combatPoints}}</li>
+      <li><b>Date Caught: </b>{{dateCaught}}</li>
     </ul>
     {{/pokemons}}
     <hr>
 
-    <h1>Add You A Pokemon:</h1>
+    <h1 class="header">Add A Pokemon</h1>
     <form method="post" action="/">
       <h3>Pokemon Name:</h3>
       <input type="text" name="name" placeholder="name">
+      <h3>Pokemon Nickname(not required):</h3>
+      <input type="text" name="nickName" placeholder="name">
       <h3>Select your Pokemon's type (up to two):</h3>
       <div id="checkboxes">
-        <input type="checkbox" name="type" value="flying"/> Flying <br/>
-        <input type="checkbox" name="type" value="grass"/> Grass <br/>
-        <input type="checkbox" name="type" value="poison"/> Poison <br/>
-        <input type="checkbox" name="type" value="ghost"/> Ghost <br/>
-        <input type="checkbox" name="type" value="ground"/> Ground <br/>
-        <input type="checkbox" name="type" value="rock"/> Rock <br/>
-        <input type="checkbox" name="type" value="psychic"/> Psychic <br/>
-        <input type="checkbox" name="type" value="fairy"/> Fairy <br/>
-        <input type="checkbox" name="type" value="normal"/> Normal <br/>
-        <input type="checkbox" name="type" value="fire"/> Fire <br/>
-        <input type="checkbox" name="type" value="water"/> Water <br/>
-        <input type="checkbox" name="type" value="fighting"/> Fighting <br/>
-        <input type="checkbox" name="type" value="dark"/> Dark <br/>
-        <input type="checkbox" name="type" value="ice"/> Ice <br/>
+        <input type="checkbox" name="type" value="flying"/> Flying
+        <input type="checkbox" name="type" value="grass"/> Grass
+        <input type="checkbox" name="type" value="poison"/> Poison
+        <input type="checkbox" name="type" value="ghost"/> Ghost
+        <input type="checkbox" name="type" value="ground"/> Ground
+        <input type="checkbox" name="type" value="rock"/> Rock
+        <input type="checkbox" name="type" value="psychic"/> Psychic
+        <input type="checkbox" name="type" value="fairy"/> Fairy
+        <input type="checkbox" name="type" value="normal"/> Normal
+        <input type="checkbox" name="type" value="fire"/> Fire
+        <input type="checkbox" name="type" value="water"/> Water
+        <input type="checkbox" name="type" value="fighting"/> Fighting
+        <input type="checkbox" name="type" value="dark"/> Dark
+        <input type="checkbox" name="type" value="ice"/> Ice
+        <input type="checkbox" name="type" value="dragon"/> Dragon
       </div>
+
       <br/>
       <h3>Is the Pokemon a wonder?</h3>
-      <input type="radio" name="isAWonder" value="true">Yes</br>
-      <input type="radio" name="isAWonder" value="false">No</br>
+      <input type="radio" name="isAWonder" value="true">Yes
+      <input type="radio" name="isAWonder" value="false">No
+
       <h3>What is the Combat Power of the Pokemon?</h3>
       <input type="number" name="combatPoints" placeholder="CP Number">
       <h3>What is the date of the catch?</h3>
@@ -57,6 +64,13 @@
       </form>
       <script type="text/javascript" src="/index.js">
       </script>
+      <h2 class="header">Pokemon Go Tips:</h2>
+      <div id="tips">
+        <a href="https://thesilphroad.com/">Silph road</a>
+        <a href="https://bulbapedia.com/">Bulbapedia</a>
+        <a href="https://pokehuntr.com/">Pokehuntr</a>
+        <a href="https://www.pokemongomap.info/">Pokemon Go Map</a>
+      <div>
       <footer>Stefanie Boscarino 2017</footer>
   </body>
 </html>

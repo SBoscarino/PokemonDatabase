@@ -1,4 +1,52 @@
 body {
-  background-color: black;
-  color: white;
+  color: #166f6d;
+  background-color: #7dc9ab;
+  font-family: 'Patrick Hand SC', cursive;
+  margin: 0;
+}
+
+#name {
+  text-decoration: underline;
+  font-weight: bolder;
+  font-size: 2em;
+  color: #b07476;
+}
+
+#topmost {
+  margin-top: 0;
+}
+
+
+.header {
+  text-align: center;
+  margin-top: 1em;
+  padding: 1em;
+  background-color: #166f6d;
+  color: #7dc9ab;
+  margin-bottom: 1em;
+}
+
+ul {
+  list-style: none;
+}
+
+footer {
+  margin-top: 1em;
+  padding: 1em;
+  background-color: #166f6d;
+  color: #7dc9ab;
+  text-align: left;
+}
+
+#tips {
+  text-align: center;
+}
+
+#tips > a {
+  color: #b07476;
+}
+
+#tips > a:hover {
+  color: #9e505b;
+
 }
