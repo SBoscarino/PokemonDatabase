@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Pokemon Go Collection</title>
+  </head>
+  <body>
+    <h1>Pokemon Go Collection:</h1>
+    {{#pokemon}}
+    <ul>
+      <li>{{name}}</li>
+    </ul>
+    {{/pokemon}}
+    <h1>Add You A Pokemon:</h1>
+    <form type="post" action="/routes">
+      <input type="text" name="name">
+      <button type="submit">Add it!</button>
+
+    </form>
+  </body>
+</html>
