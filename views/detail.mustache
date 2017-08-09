@@ -2,36 +2,18 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Pokemon Go Collection</title>
-    <link rel="stylesheet" href="index.css">
+    <title>Edit One</title>
+    <link rel="stylesheet" href="/detail.css">
     <link href="https://fonts.googleapis.com/css?family=Patrick+Hand+SC" rel="stylesheet">
   </head>
   <body>
     <div class="header" id="topmost">
-    <h1 id="title">Gotta Catch 'em All!</h1>
-    <h2 id="titletext">Show off your Pokemon catching skills by listing them here and sharing with your friends...and enemies!!</h2>
-  </div>
+    <h1 id="title">Edit {{name}}</h1>
+    </div>
 
-    <h1 class="header">My Collection</h1>
-    <form method="post" action="/delete/{{_id}}">
-    {{#pokemons}}
-    <ul class="eachPokemon">
-      <li id="name"><a href="/detail/{{_id}}"<strong>{{name}}</strong></a></li>
-      {{#nickName}}<li><b>Nickname: </b>{{.}}</li>{{/nickName}}
-      <li><b>Type(s): </b>{{#type}} {{.}} {{/type}}</li>
-      <li><b>Is it a Wonder? </b>{{isAWonder}}</li>
-      <li><b>Combat Points: </b>{{combatPoints}}</li>
-      <li><b>Date Caught: </b>{{dateCaught}}</li>
-      <button type="submit">Delete Pokemon</button>
-    </ul>
-    {{/pokemons}}
-    </form>
-    <hr>
-
-    <h1 class="header">Add A Pokemon</h1>
-    <form method="post" action="/">
+    <form method="post" action="/detail/edit/{{_id}}">
       <h3>Pokemon Name:</h3>
-      <input type="text" name="name" placeholder="name">
+      <input type="text" name="name" placeholder="{{name}}">
       <h3>Pokemon Nickname(not required):</h3>
       <input type="text" name="nickName" placeholder="name">
       <h3>Select your Pokemon's type (up to two):</h3>
@@ -62,18 +44,10 @@
       <input type="number" name="combatPoints" placeholder="CP Number">
       <h3>What is the date of the catch?</h3>
       <input type="date" name="dateCaught" placeholder="Date you caught it?">
-      <button type="submit">Add that Pokemon!</button>
+      <button type="submit">Complete Edit</button>
+      <a href="/">Cancel Edit</a>
 
-      </form>
-      <script type="text/javascript" src="/index.js">
-      </script>
-      <h2 class="header">Pokemon Go Tips:</h2>
-      <div id="tips">
-        <a href="https://thesilphroad.com/">Silph road</a>
-        <a href="https://bulbapedia.com/">Bulbapedia</a>
-        <a href="https://pokehuntr.com/">Pokehuntr</a>
-        <a href="https://www.pokemongomap.info/">Pokemon Go Map</a>
-      <div>
+
       <footer>Stefanie Boscarino 2017</footer>
   </body>
 </html>

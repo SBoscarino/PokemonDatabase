@@ -19,22 +19,29 @@ router.post('/', function(req, res){
   })
 }) //saves to database then responds with result.
 
-
-router.post('/todos/delete/:id', function(req, res){
-  Todo.deleteOne({_id: req.params.id}).then(function(){
-    res.redirect('/todos');
+//DELETE from top form post in index.
+router.post('/delete/:id', function(req, res){
+  Pokemon.deleteOne({_id: req.params.id}).then(function(){
+    res.redirect('/');
   }).catch(function(err){
-    res.redirect('/todos')
+    res.redirect('/')
     })
 });
 
-// router.post('index/delete/:id', function(req, res){
-//   newPokemon.deleteOne({_id: req.params.id}).then(function(){
-//     res.redirect('/');
-//   }).catch(function(err){
-//     console.log('error at delete', delete);
-//     res.redirect('/')
-//   })
-// });
+//get detail from index when clicking name
+router.get('/detail/:id', function(req, res){
+  Pokemon.find({pokemons : req.params.id}).then(function(result){
+    console.log(result);
+    res.render('detail', {pokemons : result});
+  })
+})
 
+//edit by id from detail page
+router.post('/detail/edit/:id', function(req, res){
+  Pokemon.deleteOne({_id: req.params.id}).then(function(){
+    res.redirect('/');
+  }).catch(function(err){
+    res.redirect('/')
+    })
+});
 module.exports = router;
